@@ -14,3 +14,9 @@ console.log(patients);
 // loop?
 // array filter? [{}, {}, {}] -> [{}, {}]
 // array find? [{}, {}, {}] -> {}
+
+const inputPhoneNumber = "+55-656-460-8983";
+
+const patientWeAreLookingFor = patients.find(() => {
+  console.log("hi");
+});
