@@ -1,6 +1,6 @@
 const patients = require("./data");
 
-console.log(patients);
+// console.log(patients);
 
 // assumption: phone number is unique
 // input phonennumber
@@ -15,11 +15,11 @@ console.log(patients);
 // array filter? [{}, {}, {}] -> [{}, {}]
 // array find? [{}, {}, {}] -> {}
 
-const inputPhoneNumber = "+55-656-460-8983";
+const inputPhoneNumber = process.argv[2];
 
 const patientWeAreLookingFor = patients.find((patient) => {
-  console.log("number:", patient.phoneNumber);
-  console.log("correct?", inputPhoneNumber === patient.phoneNumber);
+  //   console.log("number:", patient.phoneNumber);
+  //   console.log("correct?", inputPhoneNumber === patient.phoneNumber);
   if (inputPhoneNumber === patient.phoneNumber) {
     return true;
   } else {
@@ -27,8 +27,12 @@ const patientWeAreLookingFor = patients.find((patient) => {
   }
 });
 
-console.log(patientWeAreLookingFor);
+if (patientWeAreLookingFor === undefined) {
+  console.log("404 patient not found");
+} else {
+  console.log(patientWeAreLookingFor);
+}
 
 // predictions:
-// 1 output, number, correct true
-// list of numbers (18): number, correct false / true, the patient we are looking for
+// - undefined
+// - no output
