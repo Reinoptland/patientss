@@ -20,11 +20,7 @@ const inputPhoneNumber = process.argv[2];
 const patientWeAreLookingFor = patients.find((patient) => {
   //   console.log("number:", patient.phoneNumber);
   //   console.log("correct?", inputPhoneNumber === patient.phoneNumber);
-  if (inputPhoneNumber === patient.phoneNumber) {
-    return true;
-  } else {
-    return false;
-  }
+  return inputPhoneNumber === patient.phoneNumber;
 });
 
 if (patientWeAreLookingFor === undefined) {
